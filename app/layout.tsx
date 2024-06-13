@@ -1,8 +1,7 @@
+import Footer from "@/components/organisms/footer";
+import AsideBar from "@/components/templates/asidebar";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +15,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <div className="grid grid-cols-[1fr_2fr]">
+          <AsideBar />
+          {children}
+        </div>
+        <div>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }
